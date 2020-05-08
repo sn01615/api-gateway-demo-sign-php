@@ -3,6 +3,13 @@ aliyun api gateway request signature demo by php
 
 智能认证U-Verify SDK
 
+官方的Demo不是Compoer的包，故做成了Compoer的包
+
+安装方法:
+```
+composer require sn01615/api-gateway-sign-php
+```
+
 使用方法：
 ```php
 
