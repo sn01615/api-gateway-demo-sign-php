@@ -18,18 +18,33 @@
  * under the License.
  */
 
-/**
- * 常用HTTP Content-Type常量
- */
-class ContentType {
-    //表单类型Content-Type
-	const CONTENT_TYPE_FORM = "application/x-www-form-urlencoded; charset=UTF-8";
-    // 流类型Content-Type
-    const CONTENT_TYPE_STREAM = "application/octet-stream; charset=UTF-8";
-    //JSON类型Content-Type
-    const CONTENT_TYPE_JSON = "application/json; charset=UTF-8";
-    //XML类型Content-Type
-    const CONTENT_TYPE_XML = "application/xml; charset=UTF-8";
-    //文本类型Content-Type
-    const CONTENT_TYPE_TEXT = "application/text; charset=UTF-8";
+namespace Aliyun\ApiGatewaySign\Util;
+spl_autoload_register("Aliyun\ApiGatewaySign\Util\Autoloader");
+
+class utoloader
+{
+    private static $autoloadPathArray = [
+        "Constant",
+        "Http",
+        "Util",
+    ];
+
+    public static function autoload($className)
+    {
+        foreach (self::$autoloadPathArray as $path) {
+            $file = dirname(__DIR__) . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . $className . ".php";
+            $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
+            if (is_file($file)) {
+                include_once $file;
+                break;
+            }
+        }
+    }
+
+    public static function addAutoloadPath($path)
+    {
+        array_push(self::$autoloadPathArray, $path);
+    }
 }
+
+?>

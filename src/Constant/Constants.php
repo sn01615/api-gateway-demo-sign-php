@@ -18,18 +18,26 @@
  * under the License.
  */
 
+namespace Aliyun\ApiGatewaySign\Constant;
 /**
- * 系统HTTP头常量
+ * 通用常量
  */
-class SystemHeader {
-    //签名Header
-    const X_CA_SIGNATURE = "X-Ca-Signature";
-    //所有参与签名的Header
-    const X_CA_SIGNATURE_HEADERS = "X-Ca-Signature-Headers";
-    //请求时间戳
-    const X_CA_TIMESTAMP = "X-Ca-Timestamp";
-    //请求放重放Nonce,15分钟内保持唯一,建议使用UUID
-    const X_CA_NONCE = "X-Ca-Nonce";
-    //APP KEY
-    const X_CA_KEY = "X-Ca-Key";
+class Constants
+{
+    //签名算法HmacSha256
+    const HMAC_SHA256 = "HmacSHA256";
+    //编码UTF-8
+    const ENCODING = "UTF-8";
+    //UserAgent
+    const USER_AGENT = "demo/aliyun/java";
+    //换行符
+    const LF = "\n";
+    //分隔符1
+    const SPE1 = ",";
+    //分隔符2
+    const SPE2 = ":";
+    //默认请求超时时间,单位毫秒
+    const DEFAULT_TIMEOUT = 1000;
+    //参与签名的系统Header前缀,只有指定前缀的Header才会参与到签名中
+    const CA_HEADER_TO_SIGN_PREFIX_SYSTEM = "X-Ca-";
 }

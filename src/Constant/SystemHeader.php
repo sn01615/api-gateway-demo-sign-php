@@ -18,49 +18,20 @@
  * under the License.
  */
 
-
+namespace Aliyun\ApiGatewaySign\Constant;
 /**
- * 集合对象的元素处理
+ * 系统HTTP头常量
  */
-class DictionaryUtil 
+class SystemHeader
 {
-	public static function Add($dic, $key, $value) {
-		if (null == $value) {
-			return;
-		}
-		if (null == $dic)
-		{
-			$dic = Array();
-		}
-		foreach($dic as $itemKey=>$itemValue)
-		{
-			//区分大小写
-			if ($itemKey == $key) {
-				$dic[$key] = $itemValue;
-				return;
-			}
-		}
-		$dic[$key] = $value;
-
-	}
-
-	public static function Get($dic, $key)
-	{
-		if (array_key_exists($key, $dic)) {
-			return $dic[$key];
-		}
-
-		return null;
-	}
-
-	public static function Pop(&$dic, $key)
-	{
-		$value = null;
-		if (array_key_exists($key, $dic)) {
-			$value = $dic[$key];
-			unset($dic[$key]);
-		}
-
-		return $value;
-	}
+    //签名Header
+    const X_CA_SIGNATURE = "X-Ca-Signature";
+    //所有参与签名的Header
+    const X_CA_SIGNATURE_HEADERS = "X-Ca-Signature-Headers";
+    //请求时间戳
+    const X_CA_TIMESTAMP = "X-Ca-Timestamp";
+    //请求放重放Nonce,15分钟内保持唯一,建议使用UUID
+    const X_CA_NONCE = "X-Ca-Nonce";
+    //APP KEY
+    const X_CA_KEY = "X-Ca-Key";
 }

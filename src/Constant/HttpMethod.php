@@ -18,16 +18,20 @@
  * under the License.
  */
 
+namespace Aliyun\ApiGatewaySign\Constant;
 /**
-*httpClient∂‘œÛ
-*/
-class HttpClient
+ * HTTPÊñπÊ≥ïÂ∏∏Èáè
+ */
+class HttpMethod
 {
-	private static $connectTimeout = 30000;//30 second
-	private static $readTimeout	= 80000;//80 second
-	
-	public static function execute($request)
-	{
-		return HttpUtil::send($request, self::$readTimeout, self::$connectTimeout);
-	}
+    //GET
+    const GET = "GET";
+    //POST
+    const POST = "POST";
+    //PUT
+    const PUT = "PUT";
+    //DELETE
+    const DELETE = "DELETE";
+    //HEAD
+    const HEAD = "HEAD";
 }

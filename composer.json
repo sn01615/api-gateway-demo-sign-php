@@ -1,0 +1,19 @@
+{
+  "name": "sn01615/api-gateway-sign-php",
+  "description": "aliyun api gateway request signature demo by php",
+  "minimum-stability": "stable",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "YangLong",
+      "email": "168119405@qq.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Aliyun\\ApiGatewaySign\\": "src"
+    }
+  },
+  "require": {
+  }
+}
